@@ -12,15 +12,38 @@
   }
   /** @type {*} */
   export let data;
+
+  /** @type {any} */
+  let show = [];
 </script>
 
-<div>hello world</div>
-{#each data.recipes as { title, description, ingredients, instructions, image }}
-  <div>
-    <h1>{title}</h1>
-    <p>{description}</p>
-    <p>{ingredients}</p>
-    <p>{instructions}</p>
-    <img src={image} alt="" />
-  </div>
-{/each}
+<div class="pt-32 grid md:grid-cols-2">
+  {#each data.recipes as { title, description, ingredients, instructions, image }, i}
+    <div class="flex flex-col justify-center items-center">
+      <div>
+        <h1>{title}</h1>
+      </div>
+      <div class="px-20 py-10">
+        <img src={image} alt="" />
+      </div>
+      <div>
+        <p class="max-w-prose">{description}</p>
+      </div>
+      <div>
+        <button
+          on:click={() => {
+            show[i] = !show[i];
+          }}>Show Recipe</button
+        >
+      </div>
+      {#if show[i]}
+        <div>
+          <h2 class="md:text-3xl font-bold">ingredients</h2>
+          <li class="max-w-prose">{ingredients}</li>
+          <h2 class="md:text-3xl font-bold">Instructions</h2>
+          <p>{instructions}</p>
+        </div>
+      {/if}
+    </div>
+  {/each}
+</div>
