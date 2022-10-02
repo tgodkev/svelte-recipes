@@ -1,6 +1,7 @@
 <script>
   import supabase from "$lib/header/db";
   import { onMount } from "svelte";
+  import { identity } from "svelte/internal";
 
   async function signup() {
     const { user, session, error } = await supabase.auth.signUp({
@@ -11,14 +12,15 @@
   }
   /** @type {*} */
   export let data;
-
-  console.log(data[0]);
 </script>
 
 <div>hello world</div>
-<h2>{data[0].recipes}</h2>
-
-{#each data[0].recipes as recipe}
-  <div>{recipe}</div>
+{#each data.recipes as { title, description, ingredients, instructions, image }}
+  <div>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    <p>{ingredients}</p>
+    <p>{instructions}</p>
+    <img src={image} alt="" />
+  </div>
 {/each}
-<button on:click={signup}>Sign up </button>

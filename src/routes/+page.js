@@ -1,4 +1,4 @@
-import {error} from '@sveltejs/kit'
+
 import supabase from '$lib/header/db';
 
 export const prerender = true;
@@ -6,12 +6,23 @@ export const prerender = true;
 
 export const load = async () => {
 try{
-        const { data, error } = await supabase.from("test").select('recipes');
+        const { data, error } = await supabase.from("Recipes").select('*');
        
-      return data
-}
-catch(err){
-    console.log(err)
+        
+        // remove data key an push value into new array 
+        const recipes = data.map((item) => {
+            return item;
+        });
+        return {
+           
+                 recipes 
+          
+        };
+    }
 
+    catch(err){
+      console.log(err)
+  
+  }
 }
-}
+
