@@ -20,13 +20,13 @@
 <div class=" pt-32 flex flex-wrap py-64 ">
   {#each data.recipes as { title, description, ingredients, instructions, image }, i}
     <div
-      class="flex flex-col justify-center w-2/5 mx-10 items-center rounded-lg  bg-violet-600 mt-10 md:py-5 "
+      class="flex flex-col w-2/5 mx-10 items-center rounded-lg  bg-slate-600 mt-10 md:py-5 shadow-black shadow-lg"
     >
-      <h1>{title}</h1>
-      <img src={image} alt={title} />
-      <p class="max-w-prose">{description}</p>
+      <h1 class="text-3xl text-white font-bold">{title}</h1>
+      <img src={image} alt={title} class="px-10 py-10" />
+      <p class="max-w-prose  px-10">{description}</p>
 
-      <div>
+      <div class="py-5">
         <button
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           on:click={() => {
@@ -35,10 +35,10 @@
         >
       </div>
       {#if show[i]}
-        <h2 class="md:text-3xl font-bold">ingredients</h2>
-        <li class="max-w-prose">{ingredients}</li>
-        <h2 class="md:text-3xl font-bold">Instructions</h2>
-        <p>{instructions}</p>
+        <h2 class="md:text-3xl font-bold ">ingredients</h2>
+        <li class="max-w-prose px-10 py-3">{ingredients}</li>
+        <h2 class="md:text-3xl font-bold px-10">Instructions</h2>
+        <p class="max-w-prose px-10 py-3">{instructions}</p>
       {/if}
     </div>
   {/each}
