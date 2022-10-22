@@ -20,7 +20,7 @@
 <div class=" pt-32 flex flex-wrap py-64 ">
   {#each data.recipes as { title, description, ingredients, instructions, image }, i}
     <div
-      class="flex flex-col w-2/5 mx-10 items-center rounded-lg  bg-slate-600 mt-10 md:py-5 shadow-black shadow-lg"
+      class="flex flex-col md:w-2/5 mx-10 items-center rounded-lg  bg-slate-600 mt-10 md:py-5 shadow-black shadow-lg"
     >
       <h1 class="text-3xl text-white font-bold">{title}</h1>
       <img src={image} alt={title} class="px-10 py-10" />

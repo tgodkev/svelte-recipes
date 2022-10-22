@@ -1,14 +1,9 @@
 <script>
   import { page } from "$app/stores";
-  import logo from "./svelte-logo.svg";
 </script>
 
 <header>
-  <div class="corner">
-    <a href="https://kit.svelte.dev">
-      <img src={logo} alt="SvelteKit" />
-    </a>
-  </div>
+  <div class="corner" />
 
   <nav data-sveltekit-prefetch>
     <svg viewBox="0 0 2 3" aria-hidden="true">

@@ -29,7 +29,7 @@
   <form
     on:submit|preventDefault={submit}
     method="post"
-    class="flex flex-col px-32 justify-center py-32"
+    class="flex flex-col px-10 md:px-32 justify-center py-32"
   >
     <label for="title">Title</label>
     <input type="text" name="title" id="title" bind:value={title} />
