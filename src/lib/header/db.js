@@ -1,5 +1,6 @@
 
 import { createClient } from '@supabase/supabase-js'
+export const prerender = true;
 
 const supabase = createClient(
     import.meta.env.VITE_SUPABASE_URL,
