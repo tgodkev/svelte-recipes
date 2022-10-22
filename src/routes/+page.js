@@ -5,10 +5,10 @@ export const prerender = true;
 
 
 export const load = async () => {
-try{
+
         const { data, error } = await supabase.from("Recipes").select('*');
        
-        
+      
         // remove data key an push value into new array 
         const recipes = data.map((item) => {
             return item;
@@ -18,11 +18,6 @@ try{
                  recipes 
           
         };
-    }
-
-    catch(err){
-      console.log(err)
   
-  }
 }
 
