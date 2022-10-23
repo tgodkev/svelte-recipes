@@ -1,5 +1,6 @@
 <script>
   import { page } from "$app/stores";
+  import Modal from "./Modal.svelte";
 </script>
 
 <header>
@@ -22,8 +23,9 @@
     </svg>
   </nav>
 
-  <div class="corner">
+  <div class="corner mr-20">
     <!-- TODO put something else here? github link? -->
+    <Modal />
   </div>
 </header>
 

@@ -25,6 +25,7 @@
 	"dependencies": {
 		"@fontsource/fira-mono": "^4.5.0",
 		"@supabase/supabase-js": "^1.35.7",
-		"@sveltejs/adapter-netlify": "^1.0.0-next.81"
+		"@sveltejs/adapter-netlify": "^1.0.0-next.81",
+		"daisyui": "^2.33.0"
 	}
 }

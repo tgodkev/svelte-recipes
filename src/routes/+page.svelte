@@ -1,15 +1,4 @@
 <script>
-  import supabase from "$lib/header/db";
-  import { onMount } from "svelte";
-  import { identity } from "svelte/internal";
-
-  async function signup() {
-    const { user, session, error } = await supabase.auth.signUp({
-      email: "tgodkev@gmail.com",
-      password: "12345678",
-    });
-    alert("user created");
-  }
   /** @type {*} */
   export let data;
 
