@@ -1,15 +1,15 @@
 <script>
   import supabase from "$lib/header/db";
-  let email = "";
-  let password = "";
+  let userEmail = "";
+  let userPassword = "";
   async function signup() {
-    const { data, error } = await supabase.auth.signUp({
-      email: email,
-      password: password,
+    const user = await supabase.auth.signUp({
+      email: userEmail,
+      password: userPassword,
     });
-    email = "";
-    password = "";
-    alert("user created");
+    userEmail = "";
+    userPassword = "";
+    alert("Account created!");
   }
 </script>
 
@@ -26,19 +26,19 @@
       class="flex flex-col px-10 md:px-32 justify-center py-32"
     >
       <label for="title">Email</label>
-      <input type="text" name="title" id="title" bind:value={email} />
+      <input type="text" name="title" id="title" bind:value={userEmail} />
       <label for="description">password</label>
       <input
         type="text"
         name="description"
         id="description"
-        bind:value={password}
+        bind:value={userPassword}
       />
 
       <button class="bg-blue-500 py-2 my-4 w-1/2" type="submit">Submit</button>
     </form>
     <div class="modal-action">
-      <label for="my-modal" class="btn">Yay!</label>
+      <label for="my-modal" class="btn">Close</label>
     </div>
   </div>
 </div>
