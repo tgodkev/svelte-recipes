@@ -23,7 +23,7 @@
     </svg>
   </nav>
 
-  <div class="corner mr-20">
+  <div class="corner  md:px-10 md:py-2">
     <!-- TODO put something else here? github link? -->
     <Modal />
   </div>
@@ -33,11 +33,6 @@
   header {
     display: flex;
     justify-content: space-between;
-  }
-
-  .corner {
-    width: 3em;
-    height: 3em;
   }
 
   .corner a {
