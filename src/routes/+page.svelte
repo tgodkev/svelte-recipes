@@ -13,7 +13,7 @@
     >
       <h1 class="text-3xl text-white font-bold py-5 px-1">{title}</h1>
       <img src={image} alt={title} class="px-10 py-10" />
-      <p class="max-w-prose text-gray-200 px-10">{description}</p>
+      <p class="max-w-prose text-gray-200 px-10 truncate">{description}</p>
 
       <div class="py-5">
         <button

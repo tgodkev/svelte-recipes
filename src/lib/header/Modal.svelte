@@ -1,24 +1,48 @@
 <script>
   import supabase from "$lib/header/db";
+  export let userInfo;
+  console.log(userInfo, " from modal");
   let userEmail = "";
   let userPassword = "";
   async function signup() {
-    const user = await supabase.auth.signUp({
+    const {
+      user,
+      session: userSession,
+      error,
+    } = await supabase.auth.signUp({
       email: userEmail,
       password: userPassword,
     });
     userEmail = "";
     userPassword = "";
-    alert("Account created!");
+    alert("Confrim your email to create your account!");
+    if (error) {
+      alert(error.message);
+    }
   }
-  async function signin() {
-    const user = await supabase.auth.signIn({
+  async function signin({ cookies }) {
+    const {
+      user,
+      session: userSession,
+      error,
+    } = await supabase.auth.signIn({
       email: userEmail,
       password: userPassword,
     });
+    await cookies.set("session", userSession, {
+      path: "/",
+      maxAge: 60 * 60 * 24 * 7,
+      sameSite: "strict",
+      httpOnly: true,
+      secure: true,
+    });
+
     userEmail = "";
     userPassword = "";
     alert("Logged in!");
+    if (error) {
+      alert(error.message);
+    }
   }
 </script>
 
