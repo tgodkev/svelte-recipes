@@ -1,5 +1,7 @@
 <script>
   // import supabase from "$lib/header/db";
+  import { enhance } from "$app/forms";
+
   // let title = "";
   // let description = "";
   // let ingredients = "";
@@ -60,8 +62,8 @@
     <button class="bg-blue-500 py-2 my-4 w-1/2" type="submit">Submit</button>
   </form>
 </div> -->
-<form method="POST">
-  <input name="email" type="email" />
+<form method="POST" use:enhance>
+  <input name="email" type="text" />
   <input name="password" type="password" />
-  <button>Log in</button>
+  <button type="submit">Log in</button>
 </form>
