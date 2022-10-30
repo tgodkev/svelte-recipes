@@ -7,7 +7,7 @@
   console.log(session, " from layout");
 </script>
 
-<div class="bg-slate-300">
+<div data-theme="sythwave">
   <Header userInfo={session} />
 
   <main>
