@@ -1,5 +1,4 @@
 import supabase from "$lib/header/db";
-export const prerender = true;
 
 
 export const load = async ({cookies}) => {

@@ -6,7 +6,7 @@
 </script>
 
 <div class=" pt-32 flex flex-wrap md:flex-row ">
-  {#each data.recipes as { title, description, ingredients, instructions, image, id }, i}
+  {#each data.recipes as { title, description, image, id }, i}
     <div class="card w-96 glass md:mx-10">
       <figure><img src={image} alt="car!" /></figure>
       <div class="card-body">
