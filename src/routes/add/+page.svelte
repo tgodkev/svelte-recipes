@@ -1,69 +1,82 @@
 <script>
-  // import supabase from "$lib/header/db";
   import { enhance } from "$app/forms";
-
-  // let title = "";
-  // let description = "";
-  // let ingredients = "";
-  // let instructions = "";
-  // let image = "";
-
-  // async function submit() {
-  //   const test = await supabase.from("Recipes").insert([
-  //     {
-  //       title: title,
-  //       description: description,
-  //       ingredients: ingredients,
-  //       instructions: instructions,
-  //       image: image,
-  //     },
-  //   ]);
-  //   title = "";
-  //   description = "";
-  //   ingredients = "";
-  //   instructions = "";
-  //   image = "";
-  // }
 </script>
 
-<!--<div>
+<div>
   <h1>Add Recipe</h1>
- <form
-    on:submit|preventDefault={submit}
+  <form
+    use:enhance={({ form, data, cancel }) => {
+      return ({ result }) => {
+        if (result.type === "success") {
+          form.reset();
+          alert("Recipe added successfully");
+        }
+      };
+    }}
     method="POST"
     class="flex flex-col px-10 md:px-32 justify-center py-32"
-    action="?/login"
   >
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title" bind:value={title} />
-    <label for="description">Description</label>
-    <textarea
-      type="text"
-      name="description"
-      id="description"
-      bind:value={description}
-    />
-    <label for="ingredients">Ingredients</label>
-    <textarea
-      type="text"
-      name="ingredients"
-      id="ingredients"
-      bind:value={ingredients}
-    />
-    <label for="instructions">Instructions</label>
-    <textarea
-      type="text"
-      name="instructions"
-      id="instructions"
-      bind:value={instructions}
-    />
-    <label for="image">Image (must be image url)</label>
-    <input type="text" name="image" id="image" bind:value={image} />
-    <button class="bg-blue-500 py-2 my-4 w-1/2" type="submit">Submit</button>
+    <div class="form-control">
+      <label for="title" class="input-group input-group-vertical">
+        <span class="text-xl text-primary">Title</span>
+        <input
+          name="title"
+          id="title"
+          type="text"
+          placeholder="info@site.com"
+          class="input input-bordered input-secondary"
+        />
+      </label>
+    </div>
+    <div class="form-control py-4">
+      <label for="description" class="input-group input-group-vertical">
+        <span class="text-xl text-primary">Description</span>
+        <input
+          name="description"
+          id="description"
+          type="text"
+          placeholder="info@site.com"
+          class="input input-bordered input-secondary "
+        />
+      </label>
+    </div>
+    <div class="form-control py-4">
+      <label for="ingredients" class="input-group input-group-vertical">
+        <span class="text-xl text-primary">Ingredients</span>
+        <textarea
+          name="ingredients"
+          id="ingredients"
+          type="text"
+          placeholder="info@site.com"
+          class="textarea textarea-secondary "
+        />
+      </label>
+    </div>
+    <div class="form-control py-4">
+      <label for="instructions" class="input-group input-group-vertical">
+        <span class="text-xl text-primary">Instructions</span>
+        <textarea
+          name="instructions"
+          id="instructions"
+          type="text"
+          placeholder="info@site.com"
+          class="textarea textarea-secondary "
+        />
+      </label>
+    </div>
+    <div class="form-control py-4">
+      <label for="image" class="input-group input-group-vertical">
+        <span class="text-xl text-primary">Image (must be image url)</span>
+        <input
+          name="image"
+          id="image"
+          type="text"
+          placeholder="info@site.com"
+          class="input input-bordered input-secondary "
+        />
+      </label>
+    </div>
+
+    <button class="btn btn-xl btn-secondary" type="submit">Submit</button>
   </form>
-</div> -->
-<form method="POST" use:enhance>
-  <input name="email" type="text" />
-  <input name="password" type="password" />
-  <button type="submit">Log in</button>
-</form>
+</div>
