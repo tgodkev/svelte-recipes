@@ -27,4 +27,4 @@ export const actions = {
 
         ])},
   };
-  export const prerender = true;
+  
