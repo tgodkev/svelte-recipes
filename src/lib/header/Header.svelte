@@ -1,8 +1,7 @@
 <script>
   import { page } from "$app/stores";
-  import Modal from "./Modal.svelte";
+
   export let userInfo;
-  console.log(userInfo, " from header");
   // check to see if user is logged in
 </script>
 
@@ -28,7 +27,6 @@
 
   <div class="corner  md:px-10 md:py-2">
     <!-- TODO put something else here? github link? -->
-    <Modal {userInfo} />
   </div>
 </header>
 

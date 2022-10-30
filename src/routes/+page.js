@@ -6,7 +6,10 @@ export const prerender = true;
 
 export const load = async () => {
 
-        const { data, error } = await supabase.from("Recipes").select('*');
+        // const { data, error } = await supabase.from("Recipes").select().eq('id', 17);
+        const { data, error } = await supabase.from("Recipes").select();
+
+     
        
       
         // remove data key an push value into new array 
