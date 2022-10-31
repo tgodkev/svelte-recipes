@@ -7,13 +7,13 @@
 
 <div class="flex flex-col md:flex-row pt-10">
   <div class="card glass mx-2 md:mx-10  md:w-1/2">
+    <figure><img src={recipe[0].image} alt="car!" /></figure>
     <div class="card-body">
       <h1 class="card-title">{recipe[0].title}</h1>
       <div class="card-actions justify-end">
-        <button class="btn btn-primary">Home</button>
+        <a href="/"> <button class="btn btn-primary">Home</button></a>
       </div>
     </div>
-    <figure><img src={recipe[0].image} alt="car!" /></figure>
   </div>
 
   <div class=" flex flex-col justify-center items-center px-5 pt-10 md:w-1/2">
