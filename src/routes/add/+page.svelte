@@ -3,7 +3,6 @@
 </script>
 
 <div>
-  <h1>Add Recipe</h1>
   <form
     use:enhance={({ form, data, cancel }) => {
       return ({ result }) => {
