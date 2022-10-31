@@ -1,5 +1,6 @@
 <script>
   import { enhance } from "$app/forms";
+  import { redirect } from "@sveltejs/kit";
 </script>
 
 <div>
@@ -8,9 +9,9 @@
       return ({ result }) => {
         if (result.type === "success") {
           form.reset();
-          console.log(data);
 
           alert("logged in successfully");
+          redirect(200, "/recipes");
         }
 
         if (result.type === "invalid") {

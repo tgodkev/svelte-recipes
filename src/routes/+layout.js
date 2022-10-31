@@ -4,7 +4,7 @@ import supabase from "$lib/header/db";
 export const load = async ({cookies}) => {
 
      const session =   supabase.auth.onAuthStateChange((event, session) => {
-        console.log(event, session);
+        console.log(event, session , 'from onAuthStateChange')
        
         cookies.set('session', session, {
           path: '/',
@@ -14,7 +14,7 @@ export const load = async ({cookies}) => {
           secure: true,
     
        });
-      
+     
         return {
             session
         };
