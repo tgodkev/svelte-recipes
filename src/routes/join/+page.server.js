@@ -12,7 +12,7 @@ export const actions = {
 
           return invalid(400, {missing: 'title, description, ingredients, instructions, image'});
         }else{
-          // generate superbase login function 
+         
 
           const { user, session, error } = await supabase.auth.signIn({
             email: email,

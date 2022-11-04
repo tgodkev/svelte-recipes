@@ -11,8 +11,8 @@
   </div>
 
   <div class="flex 1/4">
-    <a href="/add" class="btn ">Add Recipe</a>
-    <a href="/join" class="btn uppercase mx-2">Sign up</a>
-    <a href="/join" class="btn ">Login</a>
+    <a href="/add" class=" ">Add Recipe</a>
+    <a href="/join" class=" mx-2">Sign up</a>
+    <a href="/join" class=" ">Login</a>
   </div>
 </div>
