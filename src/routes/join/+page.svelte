@@ -3,7 +3,7 @@
   import { redirect } from "@sveltejs/kit";
 </script>
 
-<div>
+<!-- <div>
   <form
     use:enhance={({ form, data, cancel }) => {
       return ({ result }) => {
@@ -51,12 +51,12 @@
 
     <button class="btn btn-xl btn-secondary" type="submit">login</button>
   </form>
-</div>
+</div> -->
 
 <!--login form above 
  -->
 
-<!-- <div>
+<div>
   <form
     use:enhance={({ form, data, cancel }) => {
       return ({ result }) => {
@@ -104,4 +104,4 @@
 
     <button class="btn btn-xl btn-secondary" type="submit">signup</button>
   </form>
-</div> -->
+</div>
