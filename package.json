@@ -5,8 +5,8 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch"
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
@@ -26,6 +26,7 @@
 		"@fontsource/fira-mono": "^4.5.0",
 		"@supabase/supabase-js": "^1.35.7",
 		"@sveltejs/adapter-netlify": "^1.0.0-next.81",
-		"daisyui": "^2.36.1"
+		"daisyui": "^2.36.1",
+		"tslib": "^2.4.1"
 	}
 }
