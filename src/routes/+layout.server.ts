@@ -3,10 +3,10 @@ import supabase from "$lib/header/db";
 
 export const load = async ({cookies}) => {
 
-     const session =   supabase.auth.onAuthStateChange((event, session) => {
+        supabase.auth.onAuthStateChange((event, session) => {
         console.log( session , 'from onAuthStateChange')
-       
-        cookies.set('session', session, {
+
+        cookies.set('Newsession', session.access_token, {
           path: '/',
           maxAge: 60 * 60 * 24 * 7,
           sameSite: 'strict',
@@ -15,14 +15,12 @@ export const load = async ({cookies}) => {
     
        });
      
-        return {
-            session
-        };
+      
     });
     
     // 5f420076-915a-411a-8cb8-d0a3bdea3241"
   return {
-    session : session
+    session : 'worls'
   };
 }
 
