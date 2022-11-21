@@ -1,7 +1,7 @@
 import supabase from "$lib/header/db";
 import { invalid, redirect } from "@sveltejs/kit";
 
-/** @type {import('./$types').Actions} */
+
 export const actions = {
     login: async ({event, request}) => {
         const data = await request.formData();

@@ -1,10 +1,9 @@
-<script>
-  /** @type {*} */
-  export let data;
+<script lang="ts">
+  import type { PageData } from "./$types";
+
+  export let data: PageData;
 
   console.log(data.session);
-
-  /** @type {any} */
 </script>
 
 <div class=" pt-32 grid md:grid-cols-3">
