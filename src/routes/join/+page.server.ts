@@ -19,17 +19,7 @@ export const actions = {
             password: password,
           });
 
-          supabase.auth.onAuthStateChange((event, session) => {
-            cookies.get('session', 'test', {
-              path: '/',
-              maxAge: 60 * 60 * 24 * 7,
-              sameSite: 'strict',
-              httpOnly: true,
-              secure: true,
-        
-           });
-            
-        });
+         
           
     
         }
@@ -44,13 +34,32 @@ export const actions = {
 
           return invalid(400, {missing: 'title, description, ingredients, instructions, image'});
         }else{
-          // generate superbase login function 
+        
 
           const { user, session, error } = await supabase.auth.signUp({
             email: email,
             password: password,
             
+            
           });
+
+          let cookieSesssion: string[] = []
+          supabase.auth.onAuthStateChange((event, session) => {
+            
+        
+            cookieSesssion.push(session.access_token)
+        });
+
+
+        cookies.set('Newsession', cookieSesssion, {
+          path: '/',
+          maxAge: 60 * 60 * 24 * 7,
+          sameSite: 'strict',
+          httpOnly: true,
+          secure: true,
+    
+       });
+        
 
          
             
