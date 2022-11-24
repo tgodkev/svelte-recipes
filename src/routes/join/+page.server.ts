@@ -40,33 +40,22 @@ export const actions = {
             email: email,
             password: password,
             
-            
-          });
 
-          let cookieSesssion: string[] = []
-          supabase.auth.onAuthStateChange((event, session) => {
-            
+          },
+          
+          
+          );
+          if(session){
+            console.log(session, '<-- session');
+           
+          }
+          if(error){
+            console.log(error, '<-- error');
+          }
+
+           
         
-            cookieSesssion.push(session.access_token)
-        });
-
-
-        cookies.set('Newsession', cookieSesssion, {
-          path: '/',
-          maxAge: 60 * 60 * 24 * 7,
-          sameSite: 'strict',
-          httpOnly: true,
-          secure: true,
-    
-       });
-        
-
-         
-            
-    
-         
-
-    
+       
         }
        }
   };
