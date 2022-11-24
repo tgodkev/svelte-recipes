@@ -2,8 +2,9 @@
   import Header from "$lib/header/Header.svelte";
   import "../app.css";
   export let data;
-  let { session } = data.session;
-  $: ({ session } = data.session);
+
+  let { session } = data;
+  $: ({ session } = data);
 </script>
 
 <div data-theme="sythwave">

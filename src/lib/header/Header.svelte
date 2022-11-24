@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
   import { page } from "$app/stores";
 
-  export let userInfo;
+  export let userInfo: boolean;
+  console.log(userInfo, "userInfo");
   // check to see if user is logged in
 </script>
 
@@ -11,8 +12,12 @@
   </div>
 
   <div class="flex 1/4">
-    <a href="/add" class=" ">Add Recipe</a>
-    <a href="/join" class=" mx-2">Sign up</a>
-    <a href="/join" class=" ">Login</a>
+    <a href="/add" class="px-5">Add Recipe</a>
+    {#if userInfo === false}
+      <a href="/join" class=" ">Sign UP</a>
+      <a href="/join" class=" ">Log In</a>
+    {:else}
+      <a href="/join" class=" ">Sign Out</a>
+    {/if}
   </div>
 </div>

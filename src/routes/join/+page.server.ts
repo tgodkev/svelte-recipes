@@ -19,7 +19,19 @@ export const actions = {
             password: password,
           });
 
-         
+          if(session){
+            cookies.set('UID', session.access_token, {
+              path: '/',
+              maxAge: 60 * 60 * 24 * 7,
+              sameSite: 'strict',
+              httpOnly: true,
+              secure: true,
+            });
+           
+          }
+          if(error){
+            console.log(error, '<-- error');
+          }
           
     
         }
@@ -45,9 +57,18 @@ export const actions = {
           
           
           );
-          if(session){
-            console.log(session, '<-- session');
+         
+          if(user){
+            console.log(user, '<--user');
+            cookies.set('UID', user.id, {
+              path: '/',
+              maxAge: 60 * 60 * 24 * 7,
+              sameSite: 'strict',
+              httpOnly: true,
+              secure: true,
+            });
            
+            
           }
           if(error){
             console.log(error, '<-- error');
