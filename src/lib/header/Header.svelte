@@ -2,7 +2,7 @@
   import { page } from "$app/stores";
 
   export let userInfo: boolean;
-  console.log(userInfo, "userInfo");
+  console.log(userInfo, "userInfo from header");
   // check to see if user is logged in
 </script>
 
