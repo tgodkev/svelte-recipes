@@ -5,7 +5,7 @@ export const load = async ({cookies}) => {
 
       cookies.get('UID');
 
-      if(cookies.get('UID') !== null){
+      if(cookies.get('UID') === cookies.get('UID')){
         console.log('logged in');
         return {
           session: true
