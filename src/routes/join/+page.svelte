@@ -7,7 +7,7 @@
   $: ({ session } = data);
 </script>
 
-{#if session !== true}
+{#if session === true}
   <div>
     <form
       use:enhance={({ form, data, cancel }) => {
@@ -61,7 +61,7 @@
 <!--login form above 
  -->
 
-{#if session === true}
+{#if session === false}
   <div>
     <form
       use:enhance={({ form, data, cancel }) => {
