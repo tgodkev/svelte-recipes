@@ -1,8 +1,16 @@
 <script lang="ts">
-  import { page } from "$app/stores";
+  import supabase from "$lib/header/db";
+  import { Cookies } from "@sveltejs/kit";
 
   export let userInfo: boolean;
-  console.log(userInfo, "userInfo from header");
+
+  async function signOut({ Cookies }): Promise<void> {
+    const { error } = await supabase.auth.signOut();
+    if (error) console.log("error", error);
+
+    Cookies.remove("UID");
+  }
+
   // check to see if user is logged in
 </script>
 
@@ -17,7 +25,7 @@
       <a href="/join" class=" ">Sign UP</a>
       <a href="/join" class=" ">Log In</a>
     {:else}
-      <a href="/join" class=" ">Sign Out</a>
+      <a href="/" on:click={signOut()} class=" ">Sign Out</a>
     {/if}
   </div>
 </div>
