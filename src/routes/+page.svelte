@@ -1,13 +1,26 @@
 <script lang="ts">
-  import type { PageData } from "./$types";
+  interface HomeData {
+    session: boolean;
+    recipes: [
+      {
+        id: number;
+        title: string;
+        description: string;
+        ingredients: string;
+        instructions: string;
+        image: string;
+        user_id: number;
+      }
+    ];
+  }
+  export let data: HomeData;
 
-  export let data: PageData;
-
-  console.log(data.session);
+  let { session, recipes } = data;
+  $: ({ session, recipes } = data);
 </script>
 
 <div class=" pt-32 grid md:grid-cols-3">
-  {#each data.recipes as { title, description, image, id }, i}
+  {#each recipes as { title, description, image, id }, i}
     <div class="card  shadow-xl my-5 mx-5 image-full  ">
       <figure><img src={image} alt={title} /></figure>
       <div class="card-body">

@@ -1,13 +1,17 @@
-<script>
+<script lang="ts">
   import { enhance } from "$app/forms";
   import { redirect } from "@sveltejs/kit";
-  export let data;
+
+  interface Session {
+    session: boolean;
+  }
+  export let data: Session;
 
   let { session } = data;
   $: ({ session } = data);
 </script>
 
-{#if session === true}
+{#if session !== true}
   <div>
     <form
       use:enhance={({ form, data, cancel }) => {
@@ -61,7 +65,7 @@
 <!--login form above 
  -->
 
-{#if session === false}
+{#if session !== false}
   <div>
     <form
       use:enhance={({ form, data, cancel }) => {

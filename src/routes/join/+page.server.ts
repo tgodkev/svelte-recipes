@@ -61,10 +61,10 @@ export const actions = {
           );
          
           if(user){
-            console.log(user, '<--user');
-            cookies.set('UID', user.id, {
+            console.log(session, '<--user');
+            cookies.set('UID', session?.access_token, {
               path: '/',
-              maxAge: 60 * 60 * 24 * 7,
+              maxAge: -1,
               sameSite: 'strict',
               httpOnly: true,
               secure: true,
