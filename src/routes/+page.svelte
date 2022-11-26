@@ -33,7 +33,6 @@
         </div>
       </div>
     </div>
-
     <!--test-->
   {/each}
 </div>

@@ -1,6 +1,19 @@
 <script lang="ts">
-  import type { PageData } from "./$types";
-  export let data: PageData;
+  interface RecipeData {
+    session: boolean;
+    recipe: [
+      {
+        id: number;
+        title: string;
+        description: string;
+        ingredients: string;
+        instructions: string;
+        image: string;
+        user_id: number;
+      }
+    ];
+  }
+  export let data: RecipeData;
   let { recipe } = data;
   $: ({ recipe } = data);
 </script>

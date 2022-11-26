@@ -1,8 +1,11 @@
-<script>
+<script lang="ts">
   import Header from "$lib/header/Header.svelte";
   import "../app.css";
-  export let data;
 
+  interface LayoutData {
+    session: boolean;
+  }
+  export let data: LayoutData;
   let { session } = data;
   $: ({ session } = data);
 </script>
