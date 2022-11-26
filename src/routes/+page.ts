@@ -2,7 +2,7 @@
 import supabase from '$lib/header/db';
 
 export const prerender = true;
-interface Recipes {
+type Recipes = {
     id: number;
     title: string;
     description: string;

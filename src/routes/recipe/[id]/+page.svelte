@@ -1,5 +1,5 @@
 <script lang="ts">
-  interface RecipeData {
+  type RecipeData = {
     session: boolean;
     recipe: [
       {
@@ -12,7 +12,7 @@
         user_id: number;
       }
     ];
-  }
+  };
   export let data: RecipeData;
   let { recipe } = data;
   $: ({ recipe } = data);

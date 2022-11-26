@@ -2,9 +2,9 @@
   import { enhance } from "$app/forms";
   import { redirect } from "@sveltejs/kit";
 
-  interface Session {
+  type Session = {
     session: boolean;
-  }
+  };
   export let data: Session;
 
   let { session } = data;

@@ -1,5 +1,5 @@
 <script lang="ts">
-  interface HomeData {
+  type HomeData = {
     session: boolean;
     recipes: [
       {

@@ -2,9 +2,9 @@
   import Header from "$lib/header/Header.svelte";
   import "../app.css";
 
-  interface LayoutData {
+  type LayoutData = {
     session: boolean;
-  }
+  };
   export let data: LayoutData;
   let { session } = data;
   $: ({ session } = data);
