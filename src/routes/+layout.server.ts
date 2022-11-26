@@ -1,9 +1,11 @@
-import supabase from "$lib/header/db";
+
 
 
 export const load = async ({cookies}) => {
 
       cookies.get('UID');
+      console.log(cookies, ' cookies');
+      
 
       if(cookies.get('UID') === cookies.get('UID')){
         console.log('logged in');
